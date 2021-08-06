@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.login_container{
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login_body{
+    background: #ffffff;
+    display: none; 
+}
+/* .login_body.active{
+    display: block;
+} */
+.login_head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+    margin-left: 1vw;
+}
+.login_head p{
+    font-size: 30px;
+    margin-bottom: 1vw;
+    margin-right: 10vw;
+}
+.login_head i{
+    font-size: 24px;
+    margin-bottom: 1vw;
+}
+.login_username{
+    margin-bottom: 1vw;
+}
+.login_username label{
+    display: block;
+    margin-bottom: 0.8vw;
+}
+
+#useremail{
+    display: block;
+    width: 100%;
+    outline: none;
+    font-size: 21px;
+    margin-bottom: 0.2vw;
+}
+.login_username span{
+    color: grey;
+}
+.login_password label{
+    display: block;
+    margin-bottom: 0.8vw;
+}
+#user_password{
+    width: 100%;
+    font-size: 21px;
+}
+.login_form{
+    width: 90%;
+    margin: auto;
+}
+.login_submit{
+    display: inline-block;
+    margin: 1vw 0;
+    font-size: 17px;
+    padding: 0.5vw 1vw;
+    background: #457d9f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.user_close{
+    margin: 1vw 0.8vw;
+    padding: 0.5vw 1vw;
+    border-radius: 5px;
+    border: none;
+    background: #686464;
+    color: white;
+    float: right;
+    font-size: 17px;
+}
+.login_line{
+    margin-bottom: 2vw;
+}

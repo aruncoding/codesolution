@@ -1,0 +1,113 @@
+/* threadlist style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    /* text-decoration: none; */
+}
+
+.threadlist_whole{
+    width: 80vw;
+    margin:auto;
+}
+
+.threadlist_container{
+    margin: 1vw 0;
+}
+.threadlist_container h5{
+    font-size: 40px;
+    margin-bottom: 0.5vw;
+}
+
+.threadlist_container p{
+    font-size: 22px;
+    margin-bottom: 1vw;
+    color: gray;
+}
+.threadlist_policy{
+    margin-bottom: 2vw;
+}
+
+.threadlist_policy p{
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.threadlist_form h5{
+    font-size: 40px;
+    color: gray;
+    margin-bottom: 1vw;
+}
+.title_head{
+    margin-bottom: 1vw;
+}
+.form_submission label{
+    display: block;
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 0.3vw;
+}
+#title{
+    width: 100%;
+    font-size: 20px;
+}
+#comment{
+    width: 100%;
+    font-size: 18px;
+}
+.button_threadlist{
+    display: inline-block;
+    margin: 1vw 0;
+    padding: 1vw 2vw;
+    font-size: 17px;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+.threadlist_answer{
+    margin-bottom: 2vw;
+}
+.threadlist_answer h5{
+    font-size: 40px;
+    margin-bottom: 2vw;
+}
+.threadlist_useranser{
+    display: flex;
+    margin-bottom: 1vw;
+}
+.user_icon{
+    margin-right: 1vw;
+}
+.user_icon i{
+    font-size: 25px;
+}
+.threadlist_ques{
+    margin-bottom: 1vw;
+}
+.threadlist_ques h5{
+    font-size: 20px;
+    margin-bottom: 0.6vw;
+}
+.threadlist_ques a{
+    font-size: 21px;
+    margin-bottom: 0.2vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: underline;
+    cursor: pointer;
+    color: grey;
+    margin-bottom: 0.4vw;
+}
+.threadlist_ques p{
+    font-size: 17px;
+}
+.leads{
+    font-size: 25px;
+    margin-bottom: 3vw;
+}
+.noshow{
+    font-size: 25px;
+    margin-bottom: 3vw;
+}

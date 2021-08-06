@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.threadlist_whole{
+    width: 80vw;
+    margin:auto;
+}
+.threadlist_whole h4{
+    font-size: 25px;
+    margin-bottom: 1vw;
+}
+.threadlist_container{
+    margin: 1vw 0;
+}
+.threadlist_container h5{
+    font-size: 40px;
+    margin-bottom: 0.5vw;
+}
+
+.threadlist_container p{
+    font-size: 22px;
+    margin-bottom: 1vw;
+    color: gray;
+}
+.threadlist_policy{
+    margin-bottom: 2vw;
+}
+
+.threadlist_policy p{
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 1vw;
+}
+.threadlist_policy{
+    font-size: 25px;
+}
+.threadlist_form h5{
+    font-size: 40px;
+    color: gray;
+    margin-bottom: 1vw;
+}
+.form_submission label{
+    display: block;
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 0.3vw;
+}
+#comments{
+    width: 100%;
+    font-size: 18px;
+}
+.button_threadlist{
+    display: inline-block;
+    margin: 1vw 0;
+    padding: 1vw 2vw;
+    font-size: 17px;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.threadlist_form h5{
+    font-size: 40px;
+    color: gray;
+    margin-bottom: 1vw;
+}
+.leads{
+    font-size: 25px;
+    margin-bottom: 3vw;
+}
+.threadlist_useranser{
+    display: flex;
+    margin-bottom: 1vw;
+}
+.user_icon i{
+    font-size: 25px;
+    margin-right: 0.5vw;
+}
+.noshow{
+    font-size: 25px;
+    margin-bottom: 3vw;
+}
