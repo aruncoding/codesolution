@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/phone.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/all.css">
     <title>CodeSolution</title>
@@ -45,8 +46,9 @@
                 $cat = $row['category_name'];
                 $desc = $row['category_discription'];
                 echo '<div class="category_source">
+               
                 <h5><a href="threadlist.php?catid=' . $id . '">' . $cat . '</a></h5>
-                <p>' . substr($desc, 0, 50) . '</p>
+                <p>' . substr($desc, 0, 35) . '</p>
                 <a href="threadlist.php?catid=' . $id . '" class="thread">View Threads</a>
             </div>';
             }

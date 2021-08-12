@@ -111,3 +111,11 @@
     font-size: 25px;
     margin-bottom: 3vw;
 }
+
+#message{
+display: inline-block;
+font-size: 20px;
+background-color: grey;
+color: white;
+
+}

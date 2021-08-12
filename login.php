@@ -19,17 +19,19 @@
             </div>
             <hr class="login_line">
             <div class="login_form">
-                <form action="/codesolution/handlelogin.php" method="post">
+                <form action="/codesolution/handlelogin.php" method="post" id="lgner">
                     <div class="login_username">
                         <label for="useremail">Email address</label>
-                        <input type="email" name="useremail" id="useremail">
+                        <input type="email" name="useremail" id="useremail" class="logn_val">
                         <span>We'll never share your email with anyone else.</span>
+                        <span id="email_err" style="color:red;"></span>
                     </div>
                     <div class="login_password">
                         <label for="">Password</label>
-                        <input type="text" name="user_password" id="user_password">
+                        <input type="text" name="user_password" id="user_password" class="logn_val">
+                        <span id="passw_err" style="color:red;"></span>
                     </div>
-                    <button class="login_submit">Submit</button>
+                    <button type="button" class="login_submit logon" onclick="safe_sign(); return false;">Submit</button>
                 </form>
 
                
@@ -38,7 +40,8 @@
             <button class="user_close"  onclick="closes()">Close</button>
         </div>
     </div>
-    <script src="js/login.js"></script>
+   
 </body>
-
+<script src="js/login.js"></script>
+<script src="js/lofin.js"></script>
 </html>

@@ -1,17 +1,20 @@
 <!-- header section -->
+<link rel="stylesheet" href="css/phone.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/all.css">
 <script src="js/index.js"></script>
+<script src="js/login.js"></script>
+<script src="js/ajaxlogn.js"></script>
 <?php
 session_start();
 
 echo 
-'<nav>
+'<nav class="navbar">
     <div class="container">
         <div class="logo">
             <a href="index.php">CodeSolution</a>
         </div>
-
+    <div id="whole">
         <div class="menu">
             <ul>
                 <li><a href="index.php">Home</a></li>
@@ -46,10 +49,14 @@ echo
                         <button class="btn">Search</button>
                     </form>
                 </div>
-        <button class="btn_login" onclick="logn()">Login</button>
-        <button class="btn_signup" onclick="sign()">Signup</button>';
+                <div class="for_user">
+        <button class="btn_login" onclick="lognino()">Login</button>
+        <button class="btn_signup" onclick="sign()">Signup</button></div>';
         }
-   echo '</div>
+   echo '
+   </div>
+   </div>
+   <div id="menu"></div>
     </nav>';
 
  include "login.php";

@@ -1,4 +1,4 @@
-function logn(){
+function lognino(){
     var y = document.querySelector(".login_body");
     
     
@@ -33,3 +33,19 @@ var t = document.querySelector(".btn_login");
 t.addEventListener("click", function(){
 p.style.display = 'none';
 });
+
+
+var login_containers = document.querySelector(".login_container");
+var btn_logins = document.querySelector(".btn_login");
+var closesss = document.querySelector(".close"); 
+
+btn_logins.addEventListener("click", function(){
+    login_containers.classList.add("active");
+
+})
+
+closesss.addEventListener('click', function(){
+    login_containers.classList.remove("active");
+})
+
+

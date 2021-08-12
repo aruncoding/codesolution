@@ -9,19 +9,19 @@
     <title>CodeSolution</title>
     <?php
          include ("dbconnect.php");
-        $showAlert = false;
-        $id = $_GET['threadid'];
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $messa = $_POST['message'];
-            $sno = $_POST['sno'];
-            $sql = "INSERT INTO `comment` (`comment_content`, `thread_id`, `comment_by`, `comment_time`) VALUES ('$messa', '$id', '$sno', current_timestamp())";
-            $result = mysqli_query($conn, $sql);
-            $showAlert = true;
-            if($showAlert){
-                echo '<div class="comwnt">Your Comment have been added </div>';
-            }
-                header("Location: /codesolution/thread.php?threadid=$id");
-        }
+        // $showAlert = false;
+        // $id = $_GET['threadid'];
+        // if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        //     $messa = $_POST['message'];
+        //     $sno = $_POST['sno'];
+        //     $sql = "INSERT INTO `comment` (`comment_content`, `thread_id`, `comment_by`, `comment_time`) VALUES ('$messa', '$id', '$sno', current_timestamp())";
+        //     $result = mysqli_query($conn, $sql);
+        //     $showAlert = true;
+        //     if($showAlert){
+        //         echo '<div class="comwnt">Your Comment have been added </div>';
+        //     }
+        //         header("Location: /codesolution/thread.php?threadid=$id");
+        // }
     ?>
 </head>
 <body>
@@ -67,14 +67,19 @@ $posted_by = $row2['user_email'];
         echo '<div class="threadlist_form">
                 <h5>Post a Comment</h5>
                 <div class="form_submission">
-                    <form action="'. $_SERVER['REQUEST_URI'] . '" method="post">
+                    <form id="comme_for" action="'. $_SERVER['REQUEST_URI'] . '" method="post">
                     
                     <div class="title_body">
                         <label for="message">Type Your Comment</label>
-                        <textarea name="message" id="comments" cols="30" rows="5"></textarea>
-                        <input type="hidden" name="sno" id="sno" value="' . $_SESSION['sno'] . '">
+                        <textarea name="message" id="comments" class="form_data" cols="30" rows="5" onkeyup="commen()"></textarea>
+                        <span id="comment_error" class="text_danger" style="color:red;"></span>
+                        
                     </div>
-                    <button type="submit" class="button_threadlist">Submit</button>
+                    <input type="hidden" name="sno" id="sno" class="form_data" value="' . $_SESSION['sno'] . '">
+                        <input type="hidden" name="threadid" class="form_data" id="threadid" value="' . $_GET['threadid'] . '">
+                    
+                    <button type="button" class="button_threadlist" id="subm" onclick="save_data(); return false;">Submit</button>
+                    <div id="mess"></div>
                 </div>
                     </form>
         </div>';
@@ -124,4 +129,5 @@ $posted_by = $row2['user_email'];
 </section>
 <?php include"footer.php"; ?>
 </body>
+<script src="js/thread.js"></script>
 </html>

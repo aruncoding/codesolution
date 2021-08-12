@@ -6,43 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/threadlist.css">
+    <link rel="stylesheet" href="css/phone.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/all.css">
     <title>CodeSolution</title>
     <?php include ("dbconnect.php"); ?>
    
-        <?php
-        $showAlert = false;
-        $id = $_GET['catid'];
-        if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $th_title = $_POST['title'];
-            $th_desc = $_POST['message'];
-            $sno = $_POST['sno'];
-            $sql = "INSERT INTO `threads` (`thread_title`, `thread_desc`, `thread_cat_id`, `thread_user_id`, `timestamp`) VALUES ('$th_title', '$th_desc', '$id', '$sno', current_timestamp())";
-            $result = mysqli_query($conn, $sql);
-            
-            
-            header("Location: /codesolution/threadlist.php?catid=$id");
-        }
-        ?>
+        
 </head>
 
 <body>
      <!-- ====================header section include======================================== -->
     <?php include ("header.php"); ?>
-    <?php $showAlert = true;
+    <!-- <?php $showAlert = true;
             if($showAlert){
-                echo '<div class="sucess">Your Threads have been added </div>';
+                echo '<div class="sucess">Your Threads done </div>';
             }
-            ?>
+            ?> -->
     <?php
         $id = $_GET['catid'];
+        
         $sql = "SELECT * FROM `categories` WHERE category_id = $id";
         $result = mysqli_query($conn, $sql);
         while($row = mysqli_fetch_assoc($result)){
             $catname = $row['category_name'];
             $catdesc = $row['category_discription'];
         }
-        ?>
+    ?>
     <section class="threadlist_whole">
         <div class="threadlist_container">
             <h5>Welcome to <?php echo $catname; ?> Forums</h5>
@@ -63,17 +53,22 @@
            echo '<div class="threadlist_form">
                 <h5>Start a Discussions</h5>
                 <div class="form_submission">
-                    <form action="'. $_SERVER['REQUEST_URI'] . '" method="post">
+                    <form id="sample_form" action="'. $_SERVER['REQUEST_URI'] . '" method="post">
                     <div class="title_head">
                         <label for="title">Problem Title sss</label>
-                        <input type="text" name="title" id="title" class="form_data">
+                        <input type="text" name="title" id="title" class="form_data" onkeyup="thre_inp()">
+                        <span id="fname_error" class="text_danger" style="color:red;"></span>
                     </div>
+                    <input type="hidden" name="catid" id="catid" class="form_data" value="'. $_GET['catid']. '">
                     <input type="hidden" name="sno" id="sno" class="form_data" value="'. $_SESSION['sno']. '">
+                   
                     <div class="title_body">
                         <label for="message">Ellobrate your concern</label>
-                        <textarea name="message" class="form_data" id="comment" cols="30" rows="3"></textarea>
+                        <textarea name="message" class="form_data" id="comment" cols="30" rows="3" onkeyup="messa()"></textarea>
+                        <span id="message_error" class="text_danger" style="color:red;"></span>
                     </div>
-                    <button type="submit" class="button_threadlist">Submit</button>
+                    <button type="button" class="button_threadlist" id="submit" onclick="save_data(); return false;">Submit</button>
+                    <div id="message"></div>
                 </div>
                     </form>
             </div>';
@@ -91,7 +86,7 @@
             <hr>
         </div>
 
-        <div class="threadlist_query">
+        <div class="threadlist_query" id="userdataa">
             <?php
             $id = $_GET['catid'];
             $sql = "SELECT * FROM `threads` WHERE thread_cat_id=$id";
@@ -131,5 +126,7 @@
     </section>
     <?php include"footer.php"; ?>
 </body>
+<script src="js/index.js"></script>
+<script src="js/threadlist.js"></script>
 
 </html>

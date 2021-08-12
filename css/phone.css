@@ -1,0 +1,84 @@
+@media only screen and (max-width:900px){
+    nav{
+        position: fixed;
+        
+        z-index: 200;
+        width: 100%;
+    }
+    .container{
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .menu ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu ul li{
+        padding: 2vw 1vw !important;
+    }
+    #search{
+        width: 100% !important;
+        
+    }
+    .search_box{
+        margin-bottom: 2vw;
+        margin-left: 3vw;
+    }
+    .for_user{
+        margin-bottom: 1vw;
+        margin-left: 3vw;
+    }
+    #menu{
+        position: absolute;
+        right: 0.5vw;
+        top: 0.5vw;
+        width: 50px;
+        height: 38px;
+        background-color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #menu::before{
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 28px;
+        background-color: black;
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+    }
+    #menu::after{
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 28px;
+        background-color: black;
+        transform: translateY(5px);
+        transition: all 0.3s ease;
+    }
+    #menu.active::before{
+    transform: translateY(0px) rotate(45deg);
+    }
+    #menu.active::after{
+        transform: translateY(0px) rotate(-45deg);
+    }
+    #whole{
+        position: absolute;
+        flex-direction: column;
+        left: -900px;
+        transition: all 0.3s ease;
+        top: 101%;
+        background-color: #457d9f;
+        width: 100vw;
+    }
+    #whole.active{
+        
+        left:0px !important;
+    }
+    .logo a{
+        font-size: 35px !important;
+    }
+}
